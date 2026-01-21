@@ -21,9 +21,17 @@ installPackage() {
       local pkg=$1	
 	if [[ $(pacman -Q "${pkg}" 2>/dev/null) ]]; then
 		success_message "${pkg} is already installed"
+		return 0
 	fi
-	yay -S --needed --noconfirm --answerclean All --answerdiff None "${pkg}"
-	success_message "${pkg} successfully installed!"
+	
+	if yay -S --needed --noconfirm --answerclean All --answerdiff None "${pkg}"; then
+		success_message "${pkg} successfully installed!"
+	else
+	     error_message "Failed to install ${pkg}"
+	     return 1
+	fi
+
+
 }
 
 installYay() {
@@ -102,7 +110,7 @@ if [[ "$firstQuestion" == "y" ]]; then
 	sleep 1
 	clear
 	
-	info_message "Apllying stow..."
+	info_message "Applying stow..."
 	sleep 3
 	clear
 	stow .	
