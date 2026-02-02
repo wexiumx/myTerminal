@@ -17,21 +17,14 @@ error_message() {
 	echo -e "${RED}$1${NC}"
 }
 
-installPackage() {
-      local pkg=$1	
-	if [[ $(pacman -Q "${pkg}" 2>/dev/null) ]]; then
-		success_message "${pkg} is already installed"
-		return 0
-	fi
-	
-	if yay -S --needed --noconfirm --answerclean All --answerdiff None "${pkg}"; then
-		success_message "${pkg} successfully installed!"
-	else
-	     error_message "Failed to install ${pkg}"
-	     return 1
-	fi
-
-
+installPackages() {
+  local pkg = $1
+    if [[ $(pacman -Q "${pkg}" 2>/dev/null) ]]; then
+      success_message "${pkg} is already installed"
+      continue
+    fi
+    yay -S --needed --noconfirm --answerclean All --answerdiff None "${pkg}"
+  done
 }
 
 installYay() {
@@ -54,166 +47,67 @@ installYay() {
 }
 
 
-read -p "Do you install everything without choosing (ghostty, zsh, oh-my-posh, stow)? (y/n, default:y)" firstQuestion
-firstQuestion=${firstQuestion:-y}
+
+clear
+installYay
+sleep 1
+clear
+
+info_message "Installing Ghostty terminal..."
+sleep 3
+clear
+
+installPackage ghostty
+sleep 1
+clear
+
+info_message "Installing zsh..."
+sleep 3
+clear
+
+installPackage zsh
+sleep 1
+clear
 
 
-if [[ "$firstQuestion" == "y" ]]; then
-	clear
-	installYay
-	sleep 1
-	clear
-	
-	info_message "Installing Ghostty terminal..."
-	sleep 3
-	clear
+info_message "changing shell to zsh..."
+sleep 3
+clear
 
-	installPackage ghostty
-	sleep 1
-	clear
-	
+while ! sudo -v; do
+    echo "Incorrect password. Please try again."
+done
 
-
-	info_message "Installing zsh..."
-	sleep 3
-	clear
-
-	installPackage zsh
-	sleep 1
-	clear
-
-
-	info_message "changing shell to zsh..."
-	sleep 3
-	clear
-
-	chsh -s /bin/zsh
-	success_message "Your shell is successfully set to zsh"
-	sleep 1
-	clear
+chsh -s /bin/zsh
+success_message "Your shell is successfully set to zsh"
+sleep 1
+clear
 
 
 
-	info_message "Installing oh my posh (prompt)..."
-	sleep 3
-	clear
+info_message "Installing oh my posh (prompt)..."
+sleep 3
+clear
 
-	installPackage oh-my-posh
-	sleep 1
-	clear
-	
-	info_message "Installing stow..."
-	sleep 3
-	clear
+installPackage oh-my-posh
+sleep 1
+clear
 
-	installPackage stow
-	sleep 1
-	clear
-	
-	info_message "Applying stow..."
-	sleep 3
-	clear
-	stow .	
-	clear
-	success_message "Stow applied successfully"
-	clear
+info_message "Installing stow..."
+sleep 3
+clear
 
-	success_message "Done, enjoy my terminal :)"
-	sleep 3
+installPackage stow
+sleep 1
+clear
 
-else 
+info_message "Applying stow..."
+sleep 3
+clear
+stow .	
+clear
+success_message "Stow applied successfully"
+clear
 
-	installYay
-	sleep 1
-	clear
-	
-	read -p "Do you want Ghostty terminal? (y/n) default:y" answ
-	answ=${answ:-y}
-
-	if [[ "$answ" == "y" ]]; then
-
-		info_message "Installing Ghostty terminal... (y/n) default:y"
-		sleep 3
-		clear
-
-		installPackage ghostty
-		sleep 1
-		clear
-	fi	
-
-	read -p "Do you want to install zsh? (y/n) default:y" answ
-	answ=${answ:-y}
-
-	if [[ "$answ" == "y" ]]; then
-
-		info_message "Installing zsh..."
-		sleep 3
-		clear
-
-		installPackage zsh
-		sleep 1
-		clear
-	fi
-
-	read -p "Do you to change shell to zsh? (y/n) default:y" answ
-	answ=${answ:-y}
-
-	if [[ "$answ" == "y" ]]; then
-
-		info_message "changing shell to zsh..."
-		sleep 3
-		clear
-		
-
-		while true; do
-			chsh -s /bin/zsh
-			if [[ $? -eq 0 ]]; then 
-				success_message "shell changed successfully"
-				break
-			else 
-				error_message "Failed to change shell. Please enter your password correctly."
-			fi
-		done
-		sleep 1
-		clear
-	fi
-
-	read -p "Do you want to install oh my posh (prompt) (y/n) default:y" answ
-	answ=${answ:-y}
-	
-	if [[ "$answ" == "y" ]]; then
-
-		info_message "Installing oh my posh (prompt)..."
-		sleep 3
-		clear
-
-		installPackage oh-my-posh
-		sleep 1
-		clear
-	fi
-
-	read -p "Do you want to install stow and apply it? (y/n) default:y" answ
-	answ=${answ:-y}
-	
-	if [[ "$answ" == "y" ]]; then
-
-		info_message "Installing stow..."
-		sleep 3
-		clear
-
-		installPackage stow
-		sleep 1
-		clear
-	
-		info_message "Applying stow..."
-		sleep 3
-		clear
-		stow .	
-		clear
-		success_message "Stow applied successfully"
-		clear
-
-		success_message "Done, enjoy my terminal :)"
-		sleep 3
-
-
+success_message "Done, enjoy my terminal :)"
+sleep 3
