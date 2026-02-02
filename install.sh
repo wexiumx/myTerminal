@@ -55,8 +55,6 @@ installYay() {
 		fi
 }
 
-
-
 clear
 installYay
 sleep 1
