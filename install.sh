@@ -17,13 +17,24 @@ error_message() {
 	echo -e "${RED}$1${NC}"
 }
 
-installPackages() {
-  local pkg = $1
+installPackageByYay() {
+  local pkg=$1
     if [[ $(pacman -Q "${pkg}" 2>/dev/null) ]]; then
       success_message "${pkg} is already installed"
-    fi
-    yay -S --needed --noconfirm --answerclean All --answerdiff None "${pkg}"
+    else
+    	yay -S --needed --noconfirm --answerclean All --answerdiff None "${pkg}"
+	fi
 }
+
+installPackageByPacman() {
+	local pkg=$1
+    if [[ $(pacman -Q "${pkg}" 2>/dev/null) ]]; then
+      success_message "${pkg} is already installed"
+    else
+		sudo pacman -S ${pkg} 
+	fi
+}
+
 
 installYay() {
 		info_message "Installing yay..."
@@ -55,7 +66,7 @@ info_message "Installing Ghostty terminal..."
 sleep 3
 clear
 
-installPackage ghostty
+installPackageByPacman ghostty
 sleep 1
 clear
 
@@ -63,7 +74,7 @@ info_message "Installing zsh..."
 sleep 3
 clear
 
-installPackage zsh
+installPackageByPacman zsh
 sleep 1
 clear
 
@@ -72,13 +83,9 @@ info_message "changing shell to zsh..."
 sleep 3
 clear
 
-while ! sudo -v; do
-    echo "Incorrect password. Please try again."
-done
-
 chsh -s /bin/zsh
 success_message "Your shell is successfully set to zsh"
-sleep 1
+sleep 5
 clear
 
 
@@ -87,7 +94,7 @@ info_message "Installing oh my posh (prompt)..."
 sleep 3
 clear
 
-installPackage oh-my-posh
+installPackageByYay oh-my-posh
 sleep 1
 clear
 
@@ -95,7 +102,7 @@ info_message "Installing stow..."
 sleep 3
 clear
 
-installPackage stow
+installPackageByPacman stow
 sleep 1
 clear
 
@@ -108,4 +115,4 @@ success_message "Stow applied successfully"
 clear
 
 success_message "Done, enjoy my terminal :)"
-sleep 3
+sleep 5
