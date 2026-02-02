@@ -7,6 +7,14 @@ if [ ! -d "$ZINIT_HOME" ]; then
 	git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
 fi
 
+if ! command -v fzf &> /dev/null; then
+    sudo pacman -S --noconfirm fzf
+fi
+
+if ! command -v zoxide &> /dev/null; then
+	sudo pacman -S --noconfirm zoxide
+fi
+
 # Source/Load zinit
 source "${ZINIT_HOME}/zinit.zsh"
 
