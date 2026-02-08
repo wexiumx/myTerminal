@@ -64,10 +64,12 @@ zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
 # Aliasees
 alias ls='ls --color'
 alias c='clear'
+alias='yay -Ss'
 
 # Shell integrations
 eval "$(fzf --zsh)"
 eval "$(zoxide init --cmd cd zsh)"
 
+# prelaunch command 
 
 fastfetch
