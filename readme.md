@@ -12,7 +12,7 @@ This repository contains my personal terminal setup, featuring:
   - **Zinit** - Plugin manager
   - **fzf** - Fuzzy finder
   - **Zoxide** - Smarter cd command
-  
+- **Nvim** - text editor
 
 
 ## Installation
