@@ -64,7 +64,9 @@ zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
 # Aliasees
 alias ls='ls --color'
 alias c='clear'
-alias='yay -Ss'
+alias s='yay -Ss'
+alias i='sudo pacman -S'
+alias u='sudo pacman -Syu'
 
 # Shell integrations
 eval "$(fzf --zsh)"
