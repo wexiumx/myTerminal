@@ -67,6 +67,7 @@ alias c='clear'
 alias s='yay -Ss'
 alias i='yay -S'
 alias u='yay -Syyuu'
+alias rem='yay -Rns'
 
 # Shell integrations
 eval "$(fzf --zsh)"
