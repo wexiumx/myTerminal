@@ -2,6 +2,18 @@
 
 A minimal and efficient terminal configuration for Arch Linux and Arch-based distributions.
 
+## Screenshots
+
+<details>
+
+<summary>Click to view how my terminal looks</summary>
+
+  ![Terminal](./.screenshots/terminal-screenshot1.png)
+  ![Nvim](./.screenshots/Nvim.png)
+
+</details>
+
+
 ## Overview
 
 This repository contains my personal terminal setup, featuring:
