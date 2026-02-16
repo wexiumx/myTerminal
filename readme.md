@@ -35,8 +35,9 @@ To install this terminal configuration:
 > I assume that you already have the `git` package installed. If not, what are you waiting for?
 
 ```bash
-git clone https://github.com/wexiumx/myTerminal.git ~/
-cd ~/myTerminal
+cd 
+git clone https://github.com/wexiumx/myTerminal.git 
+cd myTerminal
 ./install.sh
 ```
 
