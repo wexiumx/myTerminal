@@ -66,7 +66,7 @@ alias ls='ls --color'
 alias c='clear'
 alias s='yay -Ss'
 alias i='yay -S'
-alias u='yay -Syyuu'
+alias u='yay -Syu'
 alias rem='yay -Rns'
 
 # Shell integrations
