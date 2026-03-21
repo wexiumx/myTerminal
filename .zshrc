@@ -77,4 +77,3 @@ eval "$(zoxide init --cmd cd zsh)"
 
 fastfetch
 
-export PATH=$PATH:/home/pesaff/.spicetify
