@@ -87,8 +87,9 @@
       "keyColor": "yellow"
     },
     {
-      "type": "custom",
-      "format": "\u001b[31m OS Age\u001b[0m  : 35 days"
+      "type": "command",
+      "key": "\u001b[31m OS Age\u001b[0m",
+      "text": "date1=$(head -n1 /var/log/pacman.log | cut -d'[' -f2 | cut -d']' -f1); echo $(( ( $(date +%s) - $(date -d \"$date1\" +%s) ) / 86400 )) days"
     },
     {
       "type": "uptime",
