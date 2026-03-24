@@ -61,13 +61,25 @@ zstyle ':completion:*' menu no
 zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
 zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
 
-# Aliasees
-alias ls='ls --color'
-alias c='clear'
-alias s='yay -Ss'
-alias i='yay -S'
-alias u='yay -Syu'
-alias rem='yay -Rns'
+# Aliases
+  
+  # Navigation & utility aliases
+  alias ls='ls --color'
+  alias c='clear'
+
+  alias .='cd ..'
+  alias ..='cd ../..'
+  alias ...='cd ../../..'
+  alias ....='cd ../../../..'
+
+
+  # Update section
+  alias s='yay -Ss'
+  alias i='yay -S'
+  alias u='yay -Syu'
+  alias rem='yay -Rns'
+
+
 
 # Shell integrations
 eval "$(fzf --zsh)"
