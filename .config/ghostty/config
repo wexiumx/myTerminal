@@ -48,6 +48,7 @@
 # # Just for example:
 # resize-overlay-duration = 4s 200ms
 
+custom-shader = shaders/cursor_warp.glsl
 
 background-opacity = 0.9
 background-blur = true
