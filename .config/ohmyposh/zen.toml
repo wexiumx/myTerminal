@@ -11,7 +11,7 @@ final_space = true
     type = 'path'
     style = 'plain'
     background = 'transparent'
-    foreground = '#5f8fb3'
+    foreground = '#8aadf4'
     template = '{{ .Path }}'
 
     [blocks.segments.properties]
@@ -20,7 +20,7 @@ final_space = true
   [[blocks.segments]]
     type = 'git'
     style = 'plain'
-    foreground = '#6c6c6c'
+    foreground = '#5b6078'
     background = 'transparent'
     template = ' {{ .HEAD }}{{ if or (.Working.Changed) (.Staging.Changed) }}*{{ end }} <cyan>{{ if gt .Behind 0 }}⇣{{ end }}{{ if gt .Ahead 0 }}⇡{{ end }}</>'
 
@@ -52,16 +52,16 @@ final_space = true
     type = 'text'
     style = 'plain'
     foreground_templates = [
-    "{{if gt .Code 0}}red{{end}}",
-    "{{if eq .Code 0}}#ee79d1{{end}}",
+    "{{if gt .Code 0}}#ed8796{{end}}",
+    "{{if eq .Code 0}}#c6a0f6{{end}}",
     ]
     background = 'transparent'
     template = '❯'
 
 [transient_prompt]
    foreground_templates = [
-    "{{if gt .Code 0}}red{{end}}",
-    "{{if eq .Code 0}}#ee79d1{{end}}",
+    "{{if gt .Code 0}}#ed8796{{end}}",
+    "{{if eq .Code 0}}#c6a0f6{{end}}",
   ]
   background = 'transparent'
   template = '❯ '
