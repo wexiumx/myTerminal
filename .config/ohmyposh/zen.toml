@@ -11,7 +11,7 @@ final_space = true
     type = 'path'
     style = 'plain'
     background = 'transparent'
-    foreground = '#8aadf4'
+    foreground = '#6c9fff'
     template = '{{ .Path }}'
 
     [blocks.segments.properties]
@@ -53,7 +53,7 @@ final_space = true
     style = 'plain'
     foreground_templates = [
     "{{if gt .Code 0}}#ed8796{{end}}",
-    "{{if eq .Code 0}}#c6a0f6{{end}}",
+    "{{if eq .Code 0}}#b682ff{{end}}",
     ]
     background = 'transparent'
     template = '❯'
@@ -61,7 +61,7 @@ final_space = true
 [transient_prompt]
    foreground_templates = [
     "{{if gt .Code 0}}#ed8796{{end}}",
-    "{{if eq .Code 0}}#c6a0f6{{end}}",
+    "{{if eq .Code 0}}#b682ff{{end}}",
   ]
   background = 'transparent'
   template = '❯ '
