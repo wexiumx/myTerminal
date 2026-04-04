@@ -63,7 +63,6 @@ zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
 
 # Aliases
   
-# Navigation & utility aliases
 alias ls='ls --color'
 alias c='clear'
 
@@ -72,6 +71,8 @@ alias ..='cd ../..'
 alias ...='cd ../../..'
 alias ....='cd ../../../..'
 alias .....='cd ../../../../..'
+
+alias py='python'
 
 
 
