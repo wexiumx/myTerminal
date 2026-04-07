@@ -64,6 +64,8 @@ zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
 # Aliases
   
 alias ls='ls --color'
+alias ll='ls --color -l'
+alias lla='ls --color -la'
 alias c='clear'
 
 alias .='cd ..'
