@@ -102,3 +102,5 @@ function y() {
     fi
     rm -f -- "$tmp"
 }
+
+export PATH=$PATH:/home/pesaff/.spicetify
