@@ -63,10 +63,10 @@ zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
 
 # Aliases
   
-alias ls='ls --color'
-alias ll='ls --color -l'
-alias la='ls --color -a'
-alias lla='ls --color -la'
+alias ls='eza'
+alias ll='eza -lh'
+alias la='eza -a'
+alias lla='eza -lha'
 alias c='clear'
 
 alias .='cd ..'
@@ -105,3 +105,4 @@ function y() {
 }
 
 export PATH=$PATH:/home/pesaff/.spicetify
+
