@@ -27,6 +27,7 @@ This repository contains my personal terminal setup, featuring:
   - **Eza** - modern ls
   - **fd** - modern find
   - **ripgrep** - modern grep
+  - **bat** - modern cat
 - **Nvim** - text editor
 
 
