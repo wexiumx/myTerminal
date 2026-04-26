@@ -1,0 +1,7 @@
+ghostty
+nvim
+zoxide
+eza
+fzf
+fd
+ripgrep
