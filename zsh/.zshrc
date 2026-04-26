@@ -64,9 +64,13 @@ zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
 # Aliases
   
 alias ls='eza'
-alias ll='eza -lh'
+alias ll='eza -lh --git'
 alias la='eza -a'
-alias lla='eza -lha'
+alias lla='eza -lha --git'
+
+alias lst='eza --tree -L 99'
+alias lsta="eza --tree -L 99 -a --ignore-glob='.git'"
+
 alias c='clear'
 
 alias .='cd ..'
