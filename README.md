@@ -29,6 +29,9 @@ This repository contains my personal terminal setup, featuring:
 
 ## Installation
 
+> [!IMPORTANT]
+> Installation script doesn't work yet!, please wait while i will finish it
+
 To install this terminal configuration:
 
 > [!IMPORTANT]
