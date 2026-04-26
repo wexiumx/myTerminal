@@ -24,13 +24,14 @@ This repository contains my personal terminal setup, featuring:
   - **Zinit** - Plugin manager
   - **fzf** - Fuzzy finder
   - **Zoxide** - Smart cd command
+- **Nvim** - text editor
+- **Tools**
   - **Eza** - modern ls
   - **fd** - modern find
   - **ripgrep** - modern grep
   - **bat** - modern cat
   - **navi** - cheat sheat for commands
-- **Nvim** - text editor
-
+  - **lazygit** - git but more interactive
 
 ## Installation
 
