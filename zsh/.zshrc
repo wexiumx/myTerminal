@@ -71,6 +71,8 @@ alias lla='eza -lha --git'
 alias lst='eza --tree -L 99'
 alias lsta="eza --tree -L 99 -a --ignore-glob='.git'"
 
+alias lg='lazygit'
+
 alias c='clear'
 
 alias .='cd ..'
