@@ -28,6 +28,7 @@ This repository contains my personal terminal setup, featuring:
   - **fd** - modern find
   - **ripgrep** - modern grep
   - **bat** - modern cat
+  - **navi** - cheat sheat for commands
 - **Nvim** - text editor
 
 
