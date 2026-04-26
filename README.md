@@ -22,16 +22,18 @@ This repository contains my personal terminal setup, featuring:
 - **Zsh** - Shell
   - **Oh My Posh** - Prompt
   - **Zinit** - Plugin manager
-  - **fzf** - Fuzzy finder
+  - **Fzf** - Fuzzy finder
   - **Zoxide** - Smart cd command
 - **Nvim** - text editor
 - **Tools**
   - **Eza** - modern ls
-  - **fd** - modern find
-  - **ripgrep** - modern grep
-  - **bat** - modern cat
-  - **navi** - cheat sheat for commands
-  - **lazygit** - git but more interactive
+  - **Fd** - modern find
+  - **Ripgrep** - modern grep
+  - **Bat** - modern cat
+  - **Navi** - cheat sheat for commands
+  - **Lazygit** - git but more interactive
+  - **Yazi** - terminal folder manager
+  - **Btop** - program that shows processes
 
 ## Installation
 
