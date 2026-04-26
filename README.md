@@ -24,6 +24,9 @@ This repository contains my personal terminal setup, featuring:
   - **Zinit** - Plugin manager
   - **fzf** - Fuzzy finder
   - **Zoxide** - Smart cd command
+  - **Eza** - modern ls
+  - **fd** - modern find
+  - **ripgrep** - modern grep
 - **Nvim** - text editor
 
 
