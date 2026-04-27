@@ -73,6 +73,8 @@ alias lsta="eza --tree -L 99 -a --ignore-glob='.git'"
 
 alias lg='lazygit'
 
+alias cat='bat'
+
 alias c='clear'
 
 alias .='cd ..'
