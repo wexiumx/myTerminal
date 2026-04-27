@@ -1,115 +1,55 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
-PURPLE='\033[0;35m'
-GREEN='\033[0;32m'
-RED='\033[0;31m'
-NC='\033[0m' # No Color
+# ----------------------------------------------------------
+# Load the library and packages list
+# ----------------------------------------------------------
 
-info_message() {
-  echo -e "${PURPLE}$1${NC}"
-}
+source ./scripts/lib.sh
+source ./scripts/packages.sh
 
-success_message() {
-  echo -e "${GREEN}$1${NC}"
-}
 
-error_message() {
-  echo -e "${RED}$1${NC}"
-}
+# ----------------------------------------------------------
+# Displaying welcome message
+# ----------------------------------------------------------
 
-installPackageByYay() {
-  local pkg=$1
-  if [[ $(pacman -Q "${pkg}" 2>/dev/null) ]]; then
-    success_message "${pkg} is already installed"
-  else
-    yay -S --needed --noconfirm --answerclean All --answerdiff None "${pkg}"
-  fi
-}
+welcome_message
 
-installPackageByPacman() {
-  local pkg=$1
-  if [[ $(pacman -Q "${pkg}" 2>/dev/null) ]]; then
-    success_message "${pkg} is already installed"
-  else
-    sudo pacman -S --noconfirm "${pkg}"
-  fi
-}
-
-installYay() {
-  info_message "Installing yay..."
-
-  if command -v yay >/dev/null; then
-    success_message "yay is installed. Skipping installation"
-  else
-    error_message "yay is not installed. Installing..."
-    sleep 1
-    sudo pacman -S --needed --noconfirm base-devel less
-    whereami=$(pwd)
-    git clone https://aur.archlinux.org/yay.git ~/Downloads/yay
-    cd ~/Downloads/yay
-    makepkg -si
-    cd $whereami
-    rm -rf ~/Downloads/yay
-    success_message "yay has been installed successfully"
-  fi
-}
-
-clear
-installYay
-sleep 1
+sleep 2
 clear
 
-info_message "Installing Ghostty terminal..."
-sleep 1
-clear
 
-installPackageByPacman ghostty
-clear
+# ----------------------------------------------------------
+# Create required folders
+# ----------------------------------------------------------
 
-info_message "Installing zsh..."
-sleep 1
-clear
+mkdir -p ~/.config/fasfetch
+mkdir -p ~/.config/ghostty
+mkdir -p ~/.config/nvim
+mkdir -p ~/.config/ohmyposh
 
-installPackageByPacman zsh
-clear
+# --------------------------------------------------------------------
+# Ask if the user wants to do a backup of the current .config folder
+# --------------------------------------------------------------------
 
-info_message "changing shell to zsh..."
-sleep 1
-clear
+info_message "Do you want to backup your current .config directory? (y/n, default: y): "
+read backup_choice
+backup_choice=${backup_choice:-y}  # Default to 'y' if empty
+if [[ "$backup_choice" == "y" ]]; then
+	mkdir -p ~/.config/terminal_backup
+	mv ~/.config/fastfetch ~/.config/terminal_backup
+	mv ~/.config/ghostty ~/.config/terminal_backup
+	mv ~/.config/nvim ~/.config/terminal_backup
+	mv ~/.config/ohmyposh ~/.config/terminal_backup
+	success_message "Backup of .config created at ~/config_backup"
+fi
 
-chsh -s /bin/zsh
-success_message "Your shell is successfully set to zsh"
-clear
 
-info_message "Installing oh my posh (prompt)..."
-sleep 1
-clear
 
-installPackageByYay oh-my-posh
-clear
 
-info_message "Installing stow..."
-sleep 1
-clear
 
-info_message "Installing Nvim"
-sleep 1
-clear
 
-installPackageByPacman nvim
-clear
 
-installPackageByPacman stow
-clear
 
-info_message "Applying stow..."
-sleep 1
-clear
-stow .
-clear
-success_message "Stow applied successfully"
-sleep 1
-clear
 
-success_message "Done, enjoy my terminal :), don't forget to reboot!"
-sleep 5
+
+
