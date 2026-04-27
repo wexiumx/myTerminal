@@ -32,7 +32,7 @@ welcome_message() {
   echo -e "\t  _______                  _             _ "
   echo -e "\t |__   __|                (_)           | |"
   echo -e "\t    | | ___ _ __ _ __ ___  _ _ __   __ _| |"
-  echo -e "\t    | |/ _ \ '__| '_ \` _ \| | '_ \/ _\`  |"
+  echo -e "\t    | |/ _ \ '__| '_ \` _ \| | '_ \ / _\` | |"
   echo -e "\t    | |  __/ |  | | | | | | | | | | (_| | |"
   echo -e "\t    |_|\___|_|  |_| |_| |_|_|_| |_|\__,_|_|"
   echo -e "\t                                         \n"
@@ -67,3 +67,7 @@ installPackages() {
     yay -S --needed --noconfirm --answerclean All --answerdiff None "${pkg}"
   done
 }
+
+
+
+welcome_message
