@@ -20,4 +20,5 @@ tools=(
 	"yazi"
 	"btop"
 	"stow"
+	"fastfetch"
 )
