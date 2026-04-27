@@ -47,7 +47,7 @@ welcome_message() {
 # ----------------------------------------------------------
 
 finish_setup() {
-  notify-send "Welcome, $USER" "Thank you for downloading my terminal :)"
+  info_message "Welcome, $USER" "Thank you for downloading my terminal :)"
   info_message "Changing shell to zsh"
   chsh -s /bin/zsh
   success_message "Finished customizations. Please reboot to enjoy your new terminal"
