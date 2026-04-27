@@ -47,8 +47,8 @@ To install this terminal configuration:
 
 ```bash
 cd 
-git clone https://github.com/wexiumx/myTerminal.git 
-cd myTerminal
+git clone https://github.com/wexiumx/terminal.git 
+cd terminal
 ./install.sh
 ```
 
