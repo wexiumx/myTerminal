@@ -1,20 +1,6 @@
-# My terminal configuration
-
-A minimal and efficient terminal configuration for Arch Linux and Arch-based distributions.
-
-## Screenshots
-
-<details>
-
-<summary>Click to view how my terminal looks</summary>
-
-  ![Terminal](./.screenshots/terminal-screenshot1.png)
-  ![Nvim](./.screenshots/Nvim.png)
-
-</details>
-
-
 ## Overview
+
+A minimal, keyboard-driven terminal setup built around **Ghostty** and the **Catppuccin** color theme. Everything is tuned for speed and aesthetics.
 
 This repository contains my personal terminal setup, featuring:
 
@@ -35,10 +21,18 @@ This repository contains my personal terminal setup, featuring:
   - **Yazi** - terminal folder manager
   - **Btop** - program that shows processes
 
-## Installation
 
-> [!WARNING]
-> Installation script doesn't work yet!, please wait while i will finish it
+## Screenshots
+
+<details>
+
+  ![Terminal](./.screenshots/terminal-screenshot1.png)
+  ![Nvim](./.screenshots/Nvim.png)
+
+</details>
+
+
+## Installation
 
 To install this terminal configuration:
 
@@ -57,6 +51,3 @@ cd terminal
 
 The installation script will automatically set up all configurations and symlinks.
 
-## Post-Installation
-
-To apply your new terminal, you will need to reboot to apply the changes.
