@@ -29,17 +29,16 @@ error_message() {
 
 welcome_message() {
   clear
-  echo -e "${PURPLE}"
-  echo -e "\t  _______                  _             _  "
-  echo -e "\t |__   __|                (_)           | | "
-  echo -e "\t    | | ___ _ __ _ __ ___  _ _ __   __ _| | "
-  echo -e "\t    | |/ _ \ '__| '_ ` _ \| | '_ \ / _` | | "
-  echo -e "\t    | |  __/ |  | | | | | | | | | | (_| | | "
-  echo -e "\t    |_|\___|_|  |_| |_| |_|_|_| |_|\__,_|_| "
-  echo -e "\t                                          \n"
+  echo -e "\t  _______                  _             _ "
+  echo -e "\t |__   __|                (_)           | |"
+  echo -e "\t    | | ___ _ __ _ __ ___  _ _ __   __ _| |"
+  echo -e "\t    | |/ _ \ '__| '_ \` _ \| | '_ \/ _\`  |"
+  echo -e "\t    | |  __/ |  | | | | | | | | | | (_| | |"
+  echo -e "\t    |_|\___|_|  |_| |_| |_|_|_| |_|\__,_|_|"
+  echo -e "\t                                         \n"
                                            
 
-  echo -e "\t      Welcome to my terminal installer :)"
+  echo -e "\t        Welcome to my terminal installer :)"
   echo -e "${NC}\n"
 }
 
