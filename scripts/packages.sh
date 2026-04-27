@@ -1,3 +1,5 @@
+#!/bin/bash
+
 shell=(
 	"ghostty"
 	"zsh"
