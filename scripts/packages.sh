@@ -21,5 +21,5 @@ tools=(
   "yazi"
   "btop"
   "stow"
-  "fastfetch-git"
+  "fastfetch"
 )
