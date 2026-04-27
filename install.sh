@@ -26,7 +26,7 @@ clear
 # --------------------------------------------------------------------
 
 info_message "Do you want to backup your current .config directory? (y/n, default: y): "
-read backup_choice
+read -r backup_choice
 backup_choice=${backup_choice:-y}  # Default to 'y' if empty
 
 if [[ "$backup_choice" == "y" ]]; then
