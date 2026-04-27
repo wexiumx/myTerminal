@@ -4,7 +4,7 @@ shell=(
 	"ghostty"
 	"zsh"
 	"zinit"
-	"ohmyposh"
+	"oh-my-posh"
 	"zoxide"
 	"fzf"
 	"neovim"
