@@ -1,12 +1,15 @@
 #!/bin/bash
 
+set -e
+trap 'error_message "Script failed at line $LINENO"' ERR
+
+
 # ----------------------------------------------------------
 # Load the library and packages list
 # ----------------------------------------------------------
 
 source ./scripts/lib.sh
 source ./scripts/packages.sh
-
 
 # ----------------------------------------------------------
 # Displaying welcome message
@@ -87,7 +90,7 @@ info_message "applying stow"
 sleep 1
 
 for dir in fastfetch ghostty nvim ohmyposh; do
-	stow dir
+	stow "$dir"
 done
 
 clear
@@ -98,4 +101,3 @@ clear
 # ----------------------------------------------------------
 
 finish_setup
-
