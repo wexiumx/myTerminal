@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # ----------------------------------------------------------
 # Define message colors
 # ----------------------------------------------------------
@@ -78,12 +80,6 @@ installYay() {
       sudo pacman -S --needed --noconfirm base-devel less
       whereami=$(pwd)
       git clone https://aur.archlinux.org/yay.git ~/Downloads/yay
-
-      if [[ $? -ne 0 ]]; then
-          error_message "Failed to clone yay repository. Aborting."
-          exit 1
-      fi
-
       cd ~/Downloads/yay
       makepkg -si
       cd $whereami
