@@ -17,5 +17,6 @@ tools=(
 	"lazygit"
 	"yazi"
 	"btop"
+	"stow"
 )
 
