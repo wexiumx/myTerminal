@@ -18,8 +18,6 @@ sleep 2
 clear
 
 
-
-
 # --------------------------------------------------------------------
 # Ask if the user wants to do a backup of the current .config folder
 # --------------------------------------------------------------------
@@ -46,31 +44,24 @@ fi
 # Create required folders
 # ----------------------------------------------------------
 
+info_message "creating required folders"
+
 mkdir -p ~/.config/fastfetch
 mkdir -p ~/.config/ghostty
 mkdir -p ~/.config/nvim
 mkdir -p ~/.config/ohmyposh
 
+info_message "done!"
+sleep 1
+
+clear
 
 
 # ----------------------------------------------------------
 # Check if yay is installed. If not, installs it
 # ----------------------------------------------------------
 
-if command -v yay > /dev/null; then
-  success_message "yay is installed. Skipping installation"
-else
-  error_message "yay is not installed. Installing..."
-  sleep 1
-  sudo pacman -S --needed --noconfirm base-devel less
-  whereami=$(pwd)
-  git clone https://aur.archlinux.org/yay.git ~/Downloads/yay
-  cd ~/Downloads/yay
-  makepkg -si
-  cd $whereami
-  rm -rf ~/Downloads/yay
-  success_message "yay has been installed successfully"
-fi
+installYay
 
 sleep 1
 clear
@@ -80,15 +71,31 @@ clear
 # Install packages
 # ----------------------------------------------------------
 
+info_message "installing packages"
+sleep 1
+
 installPackages "${shell[@]}"
 installPackages "${tools[@]}"
 
+clear
+
+# ----------------------------------------------------------
+# applying stow
+# ----------------------------------------------------------
+
+info_message "applying stow"
+sleep 1
+
+for dir in fastfetch ghostty nvim ohmyposh; do
+	stow dir
+done
+
+clear
 
 
+# ----------------------------------------------------------
+# final message
+# ----------------------------------------------------------
 
-
-
-
-
-
+finish_setup
 
