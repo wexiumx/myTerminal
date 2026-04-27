@@ -55,4 +55,4 @@ background-blur = true
 
 theme = Catppuccin Macchiato
 
-window-decoration = false
+# window-decoration = false
