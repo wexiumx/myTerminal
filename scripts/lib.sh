@@ -38,7 +38,7 @@ welcome_message() {
   echo -e "\t                                         \n"
                                            
 
-  echo -e "\t        Welcome to my terminal installer :)"
+  echo -e "\t      Welcome to my terminal installer :)"
   echo -e "${NC}\n"
 }
 
@@ -68,6 +68,3 @@ installPackages() {
   done
 }
 
-
-
-welcome_message
