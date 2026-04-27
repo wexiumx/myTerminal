@@ -24,12 +24,9 @@ This repository contains my personal terminal setup, featuring:
 
 ## Screenshots
 
-<details>
 
-  ![Terminal](./.screenshots/terminal-screenshot1.png)
-  ![Nvim](./.screenshots/Nvim.png)
-
-</details>
+![Terminal](./.screenshots/terminal-screenshot1.png)
+![Nvim](./.screenshots/Nvim.png)
 
 
 ## Installation
