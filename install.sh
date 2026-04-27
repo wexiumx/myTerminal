@@ -89,7 +89,7 @@ clear
 info_message "applying stow"
 sleep 1
 
-for dir in fastfetch ghostty nvim ohmyposh; do
+for dir in fastfetch ghostty nvim ohmyposh zsh; do
 	stow "$dir"
 done
 
