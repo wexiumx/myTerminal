@@ -5,7 +5,7 @@ shell=(
 	"ohmyposh"
 	"zoxide"
 	"fzf"
-	"nvim"
+	"neovim"
 )
 
 tools=(
@@ -19,4 +19,3 @@ tools=(
 	"btop"
 	"stow"
 )
-
