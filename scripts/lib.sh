@@ -36,7 +36,7 @@ welcome_message() {
   echo -e "\t    | |  __/ |  | | | | | | | | | | (_| | |"
   echo -e "\t    |_|\___|_|  |_| |_| |_|_|_| |_|\__,_|_|"
   echo -e "\t                                         \n"
-                                           
+
 
   echo -e "\t      Welcome to my terminal installer :)"
   echo -e "${NC}\n"
@@ -69,19 +69,25 @@ installPackages() {
 }
 
 installYay() {
-if command -v yay > /dev/null; then
-  success_message "yay is installed. Skipping installation"
-else
-  error_message "yay is not installed. Installing..."
-  sleep 1
-  sudo pacman -S --needed --noconfirm base-devel less
-  whereami=$(pwd)
-  git clone https://aur.archlinux.org/yay.git ~/Downloads/yay
-  cd ~/Downloads/yay
-  makepkg -si
-  cd $whereami
-  rm -rf ~/Downloads/yay
-  success_message "yay has been installed successfully"
-fi
-}
+  if command -v yay > /dev/null; then
 
+      success_message "yay is installed. Skipping installation"
+  else
+      error_message "yay is not installed. Installing..."
+      sleep 1
+      sudo pacman -S --needed --noconfirm base-devel less
+      whereami=$(pwd)
+      git clone https://aur.archlinux.org/yay.git ~/Downloads/yay
+
+      if [[ $? -ne 0 ]]; then
+          error_message "Failed to clone yay repository. Aborting."
+          exit 1
+      fi
+
+      cd ~/Downloads/yay
+      makepkg -si
+      cd $whereami
+      rm -rf ~/Downloads/yay
+      success_message "yay has been installed successfully"
+  fi
+}
