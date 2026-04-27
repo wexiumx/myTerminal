@@ -48,3 +48,42 @@ cd terminal
 
 The installation script will automatically set up all configurations and symlinks.
 
+
+## Keybindings & Aliases
+
+### Keybindings
+
+| Keybinding | Action |
+|------------|--------|
+| `Ctrl + P` | Search history backward |
+| `Ctrl + N` | Search history forward |
+| `Ctrl + E` | Move to end of line (emacs mode) |
+| `Ctrl + A` | Move to beginning of line (emacs mode) |
+| `Ctrl + W` | Delete word backward |
+| `Ctrl + U` | Delete to beginning of line |
+| `Ctrl + R` | Fuzzy search shell history (fzf) |
+| `Ctrl + T` | Fuzzy find files (fzf) |
+| `Ctrl + F` | Open yazi file manager |
+| `Alt + C`  | Fuzzy cd into directory (fzf) |
+| `Tab`      | fzf-tab completion with preview |
+
+### Aliases
+
+| Alias | Command | Description |
+|-------|---------|-------------|
+| `ls` | `eza` | Modern ls |
+| `ll` | `eza -lh --git` | Long list with git status |
+| `la` | `eza -a` | List all including hidden |
+| `lla` | `eza -lha --git` | Long list all with git status |
+| `lst` | `eza --tree -L 99` | Full directory tree |
+| `lsta` | `eza --tree -L 99 -a --ignore-glob='.git'` | Full tree including hidden, no .git |
+| `lg` | `lazygit` | Interactive git TUI |
+| `cat` | `bat` | Modern cat with syntax highlighting |
+| `c` | `clear` | Clear terminal |
+| `py` | `python` | Python shorthand |
+| `.` | `cd ..` | Go up 1 directory |
+| `..` | `cd ../..` | Go up 2 directories |
+| `...` | `cd ../../..` | Go up 3 directories |
+| `....` | `cd ../../../..` | Go up 4 directories |
+| `.....` | `cd ../../../../..` | Go up 5 directories |
+| `y` | yazi function | Open yazi, cd into chosen directory on exit |
