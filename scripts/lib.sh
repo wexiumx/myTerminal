@@ -50,7 +50,7 @@ finish_setup() {
   notify-send "Welcome, $USER" "Thank you for downloading my terminal :)"
   info_message "Changing shell to zsh"
   chsh -s /bin/zsh
-  success_message "Finished customizations. Restart the machine to enjoy your new terminal"
+  success_message "Finished customizations. Please reboot to enjoy your new terminal"
   exit 0
 }
 
@@ -66,5 +66,22 @@ installPackages() {
     fi
     yay -S --needed --noconfirm --answerclean All --answerdiff None "${pkg}"
   done
+}
+
+installYay() {
+if command -v yay > /dev/null; then
+  success_message "yay is installed. Skipping installation"
+else
+  error_message "yay is not installed. Installing..."
+  sleep 1
+  sudo pacman -S --needed --noconfirm base-devel less
+  whereami=$(pwd)
+  git clone https://aur.archlinux.org/yay.git ~/Downloads/yay
+  cd ~/Downloads/yay
+  makepkg -si
+  cd $whereami
+  rm -rf ~/Downloads/yay
+  success_message "yay has been installed successfully"
+fi
 }
 
